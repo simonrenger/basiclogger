@@ -28,3 +28,8 @@
 *.out
 *.app
 
+# VS
+.vs/*
+*.filters
+*.user
+
