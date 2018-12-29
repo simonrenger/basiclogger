@@ -1,0 +1,58 @@
+\hypertarget{classcof_1_1basic__logger_1_1_std_out}{}\section{cof\+:\+:basic\+\_\+logger\+:\+:Std\+Out Class Reference}
+\label{classcof_1_1basic__logger_1_1_std_out}\index{cof\+::basic\+\_\+logger\+::\+Std\+Out@{cof\+::basic\+\_\+logger\+::\+Std\+Out}}
+
+
+Terminal logging.  
+
+
+
+
+{\ttfamily \#include $<$Std\+Out.\+h$>$}
+
+Inheritance diagram for cof\+:\+:basic\+\_\+logger\+:\+:Std\+Out\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcof_1_1basic__logger_1_1_std_out}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_std_out_a2943366adfadbfeb31bb7126b4c710ae}\label{classcof_1_1basic__logger_1_1_std_out_a2943366adfadbfeb31bb7126b4c710ae}} 
+{\bfseries Std\+Out} (\hyperlink{structcof_1_1basic__logger_1_1_sink_settings}{Sink\+Settings} $\ast$settings)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_std_out_a75cb54e45babb7991d57199e12f1f338}\label{classcof_1_1basic__logger_1_1_std_out_a75cb54e45babb7991d57199e12f1f338}} 
+void \hyperlink{classcof_1_1basic__logger_1_1_std_out_a75cb54e45babb7991d57199e12f1f338}{Process} (Level lvl, fmt\+::memory\+\_\+buffer \&\&message) override
+\begin{DoxyCompactList}\small\item\em Uses {\ttfamily fwrite} and {\ttfamily fflush} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Terminal logging. 
+
+Loggs with {\ttfamily stdout} to the terminal unless the log level is {\ttfamily Level\+::\+E\+R\+R\+OR} then it is using {\ttfamily stderr}.
+
+\begin{DoxyAuthor}{Author}
+Simon Renger 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+The M\+IT License 
+\end{DoxyCopyright}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_object_8cpp-example}{example\+\_\+object.\+cpp}.\end{Desc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Sinks/\hyperlink{_std_out_8h}{Std\+Out.\+h}\item 
+A\+:/collectionofframeworks/\+Basic\+Logger/src/\+Sinks/Std\+Out.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,171 @@
+\hypertarget{_logger_8h}{}\section{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logger.h File Reference}
+\label{_logger_8h}\index{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logger.\+h@{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logger.\+h}}
+
+
+Easy to include file.  
+
+
+{\ttfamily \#include \char`\"{}Logging\+Function.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Logging\+Macros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sinks/\+File.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Sinks/\+Std\+Out.\+h\char`\"{}}\newline
+
+
+\subsection{Detailed Description}
+Easy to include file. 
+
+\begin{DoxyAuthor}{Author}
+Simon Renger 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+The M\+IT License 
+\end{DoxyCopyright}
+\hypertarget{_logger_8h_Examples}{}\subsection{Examples}\label{_logger_8h_Examples}
+\hypertarget{_logger_8h_example_object}{}\subsubsection{Object Approach}\label{_logger_8h_example_object}
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "\hyperlink{_logger_8h}{Logger.h}"}
+
+\textcolor{keyword}{class }OtherClass
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{explicit} OtherClass(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}& logger);
+
+    \textcolor{keywordtype}{void} some\_action();
+\textcolor{keyword}{private}:
+    \hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}& logger\_;
+\};
+
+OtherClass::OtherClass(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}& logger) : logger\_(logger)
+\{
+\}
+
+\textcolor{keywordtype}{void} OtherClass::some\_action()
+\{
+    logger\_.Debug(\textcolor{stringliteral}{"I am doing something"});
+\}
+
+\textcolor{keyword}{class }Application
+\{
+\textcolor{keyword}{public}:
+    Application(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}&& logger);
+    \textcolor{keywordtype}{void} do\_something();
+\textcolor{keyword}{private}:
+    \hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger} logger\_;
+    OtherClass action\_;
+\};
+
+Application::Application(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}&& logger): logger\_(std::move(
+      logger)), action\_(logger\_)
+\{
+\}
+
+\textcolor{keywordtype}{void} Application::do\_something()
+\{
+    logger\_.Info(\textcolor{stringliteral}{"I am doing something"});
+    action\_.some\_action();
+\}
+
+
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{keyword}{auto}* sink = \textcolor{keyword}{new} \hyperlink{classcof_1_1basic__logger_1_1_std_out}{cof::basic\_logger::StdOut}(\textcolor{keyword}{new} 
+      \hyperlink{structcof_1_1basic__logger_1_1_sink_settings}{cof::basic\_logger::SinkSettings});
+    \textcolor{comment}{// takes the ownership of the pointer.}
+    \textcolor{keyword}{auto} logger = \hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}(sink);
+
+    Application app(std::move(logger));
+    app.do\_something();
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCodeInclude}
+ \hypertarget{_logger_8h_example_macro}{}\subsubsection{Macro Approach}\label{_logger_8h_example_macro}
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "\hyperlink{_logger_8h}{Logger.h}"}
+
+\textcolor{keywordtype}{int} main()
+\{
+    LOGGER\_INIT\_STDOUT()
+    \hyperlink{_logging_macros_8h_a018a1fe4b078f1a684610657a5848860}{LOG}("Macro Log Message")
+    \hyperlink{_logging_macros_8h_a5dd0aa9e28b0c7db286181cfc81ebb94}{WARN}("Macro Warn Message")
+    \hyperlink{_logging_macros_8h_aafc148cee6d6c9e76b4ef417c7056f8f}{INFO}("Macro Info Message")
+    \hyperlink{_logging_macros_8h_a614c336056da6e8a7e6a06ed991b9feb}{DEBUG}("Macro Debug Message")
+    \hyperlink{_logging_macros_8h_a78e40dfd87f516e322340d249027aea1}{ERROR}("Macro Error Message")
+    \hyperlink{_logging_macros_8h_a949408ae41659956042cdbe1e59281f3}{LOGGER\_DEINIT}
+
+    return 0;
+\}
+\end{DoxyCodeInclude}
+ \hypertarget{_logger_8h_example_freefunctions}{}\subsubsection{Freefunctions Approach}\label{_logger_8h_example_freefunctions}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include "\hyperlink{_logger_8h}{Logger.h}"}
+\textcolor{keywordtype}{int} main()
+\{
+    cof::basic\_logger::Init<cof::basic\_logger::StdOut>(std::move(
+      \hyperlink{structcof_1_1basic__logger_1_1_sink_settings}{cof::basic\_logger::SinkSettings}\{\}));
+    \hyperlink{_logging_function_8h_a1f56bcf4dd7901f39b3386261c75d4a5}{cof::Log}(\textcolor{stringliteral}{"Free function Log Message"});
+    \hyperlink{_logging_function_8h_ac0c0af18a99bcd635fb89679890cdeaa}{cof::Warn}(\textcolor{stringliteral}{"Free function Warn Message"});
+    \hyperlink{_logging_function_8h_a4d2fa4bc5cade7fdb692a0615b489997}{cof::Info}(\textcolor{stringliteral}{"Free function Info Message"});
+    \hyperlink{_logging_function_8h_ac0fff05470889b9bf801966564dddb36}{cof::Debug}(\textcolor{stringliteral}{"Free function Debug Message"});
+    \hyperlink{_logging_function_8h_a09fbfa2e340f6dff1804c2a19a7b34f4}{cof::Error}(\textcolor{stringliteral}{"Free function Error Message"});
+    cof::basic\_logger::Deint();
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCodeInclude}
+\hypertarget{_logger_8h_example_easyfunc_stdout}{}\paragraph{Easy to use initialization function for `stdout`}\label{_logger_8h_example_easyfunc_stdout}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include "\hyperlink{_logger_8h}{Logger.h}"}
+\textcolor{keywordtype}{int} main()
+\{
+    cof::basic\_logger::InitStdOut();
+    \hyperlink{_logging_function_8h_a1f56bcf4dd7901f39b3386261c75d4a5}{cof::Log}(\textcolor{stringliteral}{"Free function Log Message"});
+    \hyperlink{_logging_function_8h_ac0c0af18a99bcd635fb89679890cdeaa}{cof::Warn}(\textcolor{stringliteral}{"Free function Warn Message"});
+    \hyperlink{_logging_function_8h_a4d2fa4bc5cade7fdb692a0615b489997}{cof::Info}(\textcolor{stringliteral}{"Free function Info Message"});
+    \hyperlink{_logging_function_8h_ac0fff05470889b9bf801966564dddb36}{cof::Debug}(\textcolor{stringliteral}{"Free function Debug Message"});
+    \hyperlink{_logging_function_8h_a09fbfa2e340f6dff1804c2a19a7b34f4}{cof::Error}(\textcolor{stringliteral}{"Free function Error Message"});
+    cof::basic\_logger::Deint();
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCodeInclude}
+\hypertarget{_logger_8h_example_easyfunc_file}{}\paragraph{Easy to use initialization function for `file`}\label{_logger_8h_example_easyfunc_file}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include "\hyperlink{_logger_8h}{Logger.h}"}
+\textcolor{keywordtype}{int} main()
+\{
+    cof::basic\_logger::InitFile(\hyperlink{structcof_1_1basic__logger_1_1_file_sink_settings}{cof::basic\_logger::FileSinkSettings}\{ \textcolor{stringliteral}{"
+      log.txt"} \});
+    \hyperlink{_logging_function_8h_a1f56bcf4dd7901f39b3386261c75d4a5}{cof::Log}(\textcolor{stringliteral}{"Free function Log Message"});
+    \hyperlink{_logging_function_8h_ac0c0af18a99bcd635fb89679890cdeaa}{cof::Warn}(\textcolor{stringliteral}{"Free function Warn Message"});
+    \hyperlink{_logging_function_8h_a4d2fa4bc5cade7fdb692a0615b489997}{cof::Info}(\textcolor{stringliteral}{"Free function Info Message"});
+    \hyperlink{_logging_function_8h_ac0fff05470889b9bf801966564dddb36}{cof::Debug}(\textcolor{stringliteral}{"Free function Debug Message"});
+    \hyperlink{_logging_function_8h_a09fbfa2e340f6dff1804c2a19a7b34f4}{cof::Error}(\textcolor{stringliteral}{"Free function Error Message"});
+    cof::basic\_logger::Deint();
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCodeInclude}
+ The M\+IT License
+
+Copyright (c) 2018 Simon Renger, \href{https://simonrenger.de}{\tt https\+://simonrenger.\+de}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \char`\"{}\+Software\char`\"{}), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions\+:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+T\+HE S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED \char`\"{}\+A\+S I\+S\char`\"{}, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+TY OF A\+NY K\+I\+ND, E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED, I\+N\+C\+L\+U\+D\+I\+NG B\+UT N\+OT L\+I\+M\+I\+T\+ED TO T\+HE W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE A\+U\+T\+H\+O\+RS OR C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY C\+L\+A\+IM, D\+A\+M\+A\+G\+ES OR O\+T\+H\+ER L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN AN A\+C\+T\+I\+ON OF C\+O\+N\+T\+R\+A\+CT, T\+O\+RT OR O\+T\+H\+E\+R\+W\+I\+SE, A\+R\+I\+S\+I\+NG F\+R\+OM, O\+UT OF OR IN C\+O\+N\+N\+E\+C\+T\+I\+ON W\+I\+TH T\+HE S\+O\+F\+T\+W\+A\+RE OR T\+HE U\+SE OR O\+T\+H\+ER D\+E\+A\+L\+I\+N\+GS IN T\+HE S\+O\+F\+T\+W\+A\+RE. 

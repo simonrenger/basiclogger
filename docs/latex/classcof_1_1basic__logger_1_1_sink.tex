@@ -1,0 +1,88 @@
+\hypertarget{classcof_1_1basic__logger_1_1_sink}{}\section{cof\+:\+:basic\+\_\+logger\+:\+:Sink Class Reference}
+\label{classcof_1_1basic__logger_1_1_sink}\index{cof\+::basic\+\_\+logger\+::\+Sink@{cof\+::basic\+\_\+logger\+::\+Sink}}
+
+
+The Base \hyperlink{classcof_1_1basic__logger_1_1_sink}{Sink} class.  
+
+
+
+
+{\ttfamily \#include $<$Sink.\+h$>$}
+
+Inheritance diagram for cof\+:\+:basic\+\_\+logger\+:\+:Sink\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcof_1_1basic__logger_1_1_sink}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{Sink\+In} (Level lvl, std\+::string \&\&message)
+\begin{DoxyCompactList}\small\item\em format data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_sink_aa95b0d438e4561464ba80ba3312a7ff4}\label{classcof_1_1basic__logger_1_1_sink_aa95b0d438e4561464ba80ba3312a7ff4}} 
+virtual void {\bfseries Process} (Level lvl, fmt\+::memory\+\_\+buffer \&\&message)=0
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_sink_aff876363f1ab16500c493c834f726015}\label{classcof_1_1basic__logger_1_1_sink_aff876363f1ab16500c493c834f726015}} 
+std\+::string {\bfseries Get\+Formatted\+Date} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_sink_a8befddc7ae7d03530bc059a3173715ef}\label{classcof_1_1basic__logger_1_1_sink_a8befddc7ae7d03530bc059a3173715ef}} 
+std\+::array$<$ const char $\ast$, 5 $>$ {\bfseries levels\+\_\+} \{\char`\"{}L\+OG\char`\"{}, \char`\"{}I\+N\+FO\char`\"{}, \char`\"{}D\+E\+B\+UG\char`\"{}, \char`\"{}E\+R\+R\+OR\char`\"{}, \char`\"{}W\+A\+RN\char`\"{}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Base \hyperlink{classcof_1_1basic__logger_1_1_sink}{Sink} class. 
+
+\begin{DoxyAuthor}{Author}
+Simon Renger
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+The M\+IT License 
+\end{DoxyCopyright}
+\begin{DoxySeeAlso}{See also}
+\href{https://github.com/fmtlib/fmt/}{\tt fmt fmt\+::memory\+\_\+buffer} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}\label{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}} 
+\index{cof\+::basic\+\_\+logger\+::\+Sink@{cof\+::basic\+\_\+logger\+::\+Sink}!Sink\+In@{Sink\+In}}
+\index{Sink\+In@{Sink\+In}!cof\+::basic\+\_\+logger\+::\+Sink@{cof\+::basic\+\_\+logger\+::\+Sink}}
+\subsubsection{\texorpdfstring{Sink\+In()}{SinkIn()}}
+{\footnotesize\ttfamily void cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In (\begin{DoxyParamCaption}\item[{Level}]{lvl,  }\item[{std\+::string \&\&}]{message }\end{DoxyParamCaption})}
+
+
+
+format data 
+
+Uses fmt to format content. Adds the Date as well as the log level to the message. Calls internally {\ttfamily Process}. \begin{DoxyAuthor}{Author}
+Simon Renger 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+The M\+IT License 
+\end{DoxyCopyright}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Sinks/\hyperlink{_sink_8h}{Sink.\+h}\item 
+A\+:/collectionofframeworks/\+Basic\+Logger/src/\+Sinks/Sink.\+cpp\end{DoxyCompactItemize}

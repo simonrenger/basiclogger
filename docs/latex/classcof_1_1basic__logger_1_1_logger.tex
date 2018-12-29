@@ -1,0 +1,267 @@
+\hypertarget{classcof_1_1basic__logger_1_1_logger}{}\section{cof\+:\+:basic\+\_\+logger\+:\+:Logger Class Reference}
+\label{classcof_1_1basic__logger_1_1_logger}\index{cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}}
+
+
+A basic non multi threaded logger.  
+
+
+
+
+{\ttfamily \#include $<$Basic\+Logger.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_a6eb22968894b3b6c344e0a1899cf447d}\label{classcof_1_1basic__logger_1_1_logger_a6eb22968894b3b6c344e0a1899cf447d}} 
+{\bfseries Logger} (const \hyperlink{classcof_1_1basic__logger_1_1_logger}{Logger} \&other)=delete
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_aa4d66cb63a0579fe8396e18d8bdbc058}\label{classcof_1_1basic__logger_1_1_logger_aa4d66cb63a0579fe8396e18d8bdbc058}} 
+\hyperlink{classcof_1_1basic__logger_1_1_logger}{Logger} \& {\bfseries operator=} (const \hyperlink{classcof_1_1basic__logger_1_1_logger}{Logger} \&other)=delete
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_ade6a4cfbf519c776bcebc3cd0cf1e240}\label{classcof_1_1basic__logger_1_1_logger_ade6a4cfbf519c776bcebc3cd0cf1e240}} 
+{\bfseries Logger} (\hyperlink{classcof_1_1basic__logger_1_1_logger}{Logger} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_aa011d07c00035c9df2387589c88c02d8}\label{classcof_1_1basic__logger_1_1_logger_aa011d07c00035c9df2387589c88c02d8}} 
+\hyperlink{classcof_1_1basic__logger_1_1_logger}{Logger} \& {\bfseries operator=} (\hyperlink{classcof_1_1basic__logger_1_1_logger}{Logger} \&\&other) noexcept
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_a583530f90c7f07510bc89e9521180a05}\label{classcof_1_1basic__logger_1_1_logger_a583530f90c7f07510bc89e9521180a05}} 
+{\bfseries Logger} (\hyperlink{classcof_1_1basic__logger_1_1_sink}{basic\+\_\+logger\+::\+Sink} $\ast$sink)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classcof_1_1basic__logger_1_1_logger_a4c698d87cddfe754221f7657caa2b06a}{Log} (const char $\ast$form\+Str, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classcof_1_1basic__logger_1_1_logger_ad518be9654acd1d698c6a8eb50262d52}{Warn} (const char $\ast$form\+Str, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classcof_1_1basic__logger_1_1_logger_a4562cce09bb747a47ce052f5388b16b6}{Debug} (const char $\ast$form\+Str, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classcof_1_1basic__logger_1_1_logger_a9a280522d90572bed5d06f7540d42522}{Info} (const char $\ast$form\+Str, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{classcof_1_1basic__logger_1_1_logger_a6de6aa4607ebb5edf8d3732f214f41f1}{Error} (const char $\ast$form\+Str, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_a7972063db1d84fe2a5fb3e5fde1ad997}\label{classcof_1_1basic__logger_1_1_logger_a7972063db1d84fe2a5fb3e5fde1ad997}} 
+std\+::unique\+\_\+ptr$<$ \hyperlink{classcof_1_1basic__logger_1_1_sink}{basic\+\_\+logger\+::\+Sink} $>$ {\bfseries sink\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A basic non multi threaded logger. 
+
+This is the basic logger imnpl. See \href{https://github.com/fmtlib/fmt/}{\tt fmt} for more information of the formatting. {\bfseries This is a move only type.} \begin{DoxyAuthor}{Author}
+Simon Renger 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyPrecond}{Precondition}
+If used outside of Debug mode the macro {\ttfamily C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+ER} needs to be defined. Otherwise all functions/methods will leave a zero fingerprint. 
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Warning}
+Move only type. 
+\end{DoxyWarning}
+\hypertarget{classcof_1_1basic__logger_1_1_logger_example}{}\subsection{Example}\label{classcof_1_1basic__logger_1_1_logger_example}
+
+\begin{DoxyCodeInclude}
+
+\textcolor{preprocessor}{#include "\hyperlink{_logger_8h}{Logger.h}"}
+
+\textcolor{keyword}{class }OtherClass
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{explicit} OtherClass(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}& logger);
+
+    \textcolor{keywordtype}{void} some\_action();
+\textcolor{keyword}{private}:
+    \hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}& logger\_;
+\};
+
+OtherClass::OtherClass(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}& logger) : logger\_(logger)
+\{
+\}
+
+\textcolor{keywordtype}{void} OtherClass::some\_action()
+\{
+    logger\_.Debug(\textcolor{stringliteral}{"I am doing something"});
+\}
+
+\textcolor{keyword}{class }Application
+\{
+\textcolor{keyword}{public}:
+    Application(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}&& logger);
+    \textcolor{keywordtype}{void} do\_something();
+\textcolor{keyword}{private}:
+    \hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger} logger\_;
+    OtherClass action\_;
+\};
+
+Application::Application(\hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}&& logger): logger\_(std::move(
+      logger)), action\_(logger\_)
+\{
+\}
+
+\textcolor{keywordtype}{void} Application::do\_something()
+\{
+    logger\_.Info(\textcolor{stringliteral}{"I am doing something"});
+    action\_.some\_action();
+\}
+
+
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{keyword}{auto}* sink = \textcolor{keyword}{new} \hyperlink{classcof_1_1basic__logger_1_1_std_out}{cof::basic\_logger::StdOut}(\textcolor{keyword}{new} 
+      \hyperlink{structcof_1_1basic__logger_1_1_sink_settings}{cof::basic\_logger::SinkSettings});
+    \textcolor{comment}{// takes the ownership of the pointer.}
+    \textcolor{keyword}{auto} logger = \hyperlink{classcof_1_1basic__logger_1_1_logger}{cof::basic\_logger::Logger}(sink);
+
+    Application app(std::move(logger));
+    app.do\_something();
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCodeInclude}
+ \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_object_8cpp-example}{example\+\_\+object.\+cpp}.\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_a4562cce09bb747a47ce052f5388b16b6}\label{classcof_1_1basic__logger_1_1_logger_a4562cce09bb747a47ce052f5388b16b6}} 
+\index{cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}!Debug@{Debug}}
+\index{Debug@{Debug}!cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{Debug()}{Debug()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::basic\+\_\+logger\+::\+Logger\+::\+Debug (\begin{DoxyParamCaption}\item[{const char $\ast$}]{form\+Str,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em form\+Str} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_a6de6aa4607ebb5edf8d3732f214f41f1}\label{classcof_1_1basic__logger_1_1_logger_a6de6aa4607ebb5edf8d3732f214f41f1}} 
+\index{cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}!Error@{Error}}
+\index{Error@{Error}!cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::basic\+\_\+logger\+::\+Logger\+::\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{form\+Str,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em form\+Str} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_a9a280522d90572bed5d06f7540d42522}\label{classcof_1_1basic__logger_1_1_logger_a9a280522d90572bed5d06f7540d42522}} 
+\index{cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}!Info@{Info}}
+\index{Info@{Info}!cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{Info()}{Info()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::basic\+\_\+logger\+::\+Logger\+::\+Info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{form\+Str,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em form\+Str} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_a4c698d87cddfe754221f7657caa2b06a}\label{classcof_1_1basic__logger_1_1_logger_a4c698d87cddfe754221f7657caa2b06a}} 
+\index{cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}!Log@{Log}}
+\index{Log@{Log}!cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::basic\+\_\+logger\+::\+Logger\+::\+Log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{form\+Str,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em form\+Str} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_logger_ad518be9654acd1d698c6a8eb50262d52}\label{classcof_1_1basic__logger_1_1_logger_ad518be9654acd1d698c6a8eb50262d52}} 
+\index{cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}!Warn@{Warn}}
+\index{Warn@{Warn}!cof\+::basic\+\_\+logger\+::\+Logger@{cof\+::basic\+\_\+logger\+::\+Logger}}
+\subsubsection{\texorpdfstring{Warn()}{Warn()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::basic\+\_\+logger\+::\+Logger\+::\+Warn (\begin{DoxyParamCaption}\item[{const char $\ast$}]{form\+Str,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em form\+Str} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+A\+:/collectionofframeworks/\+Basic\+Logger/include/\hyperlink{_basic_logger_8h}{Basic\+Logger.\+h}\end{DoxyCompactItemize}

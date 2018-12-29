@@ -1,0 +1,64 @@
+\hypertarget{classcof_1_1basic__logger_1_1_file}{}\section{cof\+:\+:basic\+\_\+logger\+:\+:File Class Reference}
+\label{classcof_1_1basic__logger_1_1_file}\index{cof\+::basic\+\_\+logger\+::\+File@{cof\+::basic\+\_\+logger\+::\+File}}
+
+
+The actual \hyperlink{classcof_1_1basic__logger_1_1_file}{File} logger.  
+
+
+
+
+{\ttfamily \#include $<$File.\+h$>$}
+
+Inheritance diagram for cof\+:\+:basic\+\_\+logger\+:\+:File\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcof_1_1basic__logger_1_1_file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_file_a01bf70f50c3de009072764006194727c}\label{classcof_1_1basic__logger_1_1_file_a01bf70f50c3de009072764006194727c}} 
+{\bfseries File} (\hyperlink{structcof_1_1basic__logger_1_1_sink_settings}{Sink\+Settings} $\ast$settings)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_file_a057640c6e84ddffd35215dee11e5f6a7}\label{classcof_1_1basic__logger_1_1_file_a057640c6e84ddffd35215dee11e5f6a7}} 
+virtual void {\bfseries Process} (Level lvl, fmt\+::memory\+\_\+buffer \&\&buffer) override final
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_file_a27e2decc7e6b477428c6cc3953cb31fd}\label{classcof_1_1basic__logger_1_1_file_a27e2decc7e6b477428c6cc3953cb31fd}} 
+\hyperlink{structcof_1_1basic__logger_1_1_file_sink_settings}{File\+Sink\+Settings} {\bfseries settings\+\_\+}
+\item 
+\mbox{\Hypertarget{classcof_1_1basic__logger_1_1_file_acd3d0aa11a2a7369553eef83ee12710d}\label{classcof_1_1basic__logger_1_1_file_acd3d0aa11a2a7369553eef83ee12710d}} 
+F\+I\+LE $\ast$ {\bfseries file\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The actual \hyperlink{classcof_1_1basic__logger_1_1_file}{File} logger. 
+
+Logs to a specified file with {\ttfamily fwrite} and {\ttfamily File$\ast$}. This class uses R\+A\+II. Hence {\ttfamily $\sim$\+File} is cleaning up the mess.
+
+\begin{DoxyAuthor}{Author}
+Simon Renger 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+The M\+IT License 
+\end{DoxyCopyright}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Sinks/\hyperlink{_file_8h}{File.\+h}\item 
+A\+:/collectionofframeworks/\+Basic\+Logger/src/\+Sinks/File.\+cpp\end{DoxyCompactItemize}

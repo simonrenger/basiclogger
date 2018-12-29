@@ -1,0 +1,271 @@
+\hypertarget{_logging_function_8h}{}\section{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logging\+Function.h File Reference}
+\label{_logging_function_8h}\index{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logging\+Function.\+h@{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logging\+Function.\+h}}
+
+
+A collection of logging free functions.  
+
+
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include \char`\"{}Basic\+Logger.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_logging_function_8h_a615f95e512a47e9a6f589a981120c6d2}{C\+O\+F\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+S\+\_\+\+V\+A\+L\+ID}()
+\begin{DoxyCompactList}\small\item\em check if logger is initialized if not runtime assert! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename S , typename SS $>$ }\\void \hyperlink{_logging_function_8h_a7da3a6483f1a37634cdd72a2d111bc66}{cof\+::basic\+\_\+logger\+::\+Init} (SS \&\&settings)
+\begin{DoxyCompactList}\small\item\em Initialization function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_logging_function_8h_a4012911ebfed4e8a71c7abf0d5db7482}\label{_logging_function_8h_a4012911ebfed4e8a71c7abf0d5db7482}} 
+void {\bfseries cof\+::basic\+\_\+logger\+::\+Init\+Std\+Out} ()
+\item 
+\mbox{\Hypertarget{_logging_function_8h_aca86de68e184d7bb4512126873aeb981}\label{_logging_function_8h_aca86de68e184d7bb4512126873aeb981}} 
+void {\bfseries cof\+::basic\+\_\+logger\+::\+Init\+File} (\hyperlink{structcof_1_1basic__logger_1_1_file_sink_settings}{cof\+::basic\+\_\+logger\+::\+File\+Sink\+Settings} \&\&settings)
+\item 
+\mbox{\Hypertarget{_logging_function_8h_ae8eef673c2f017d2700cc936a3a1ba3d}\label{_logging_function_8h_ae8eef673c2f017d2700cc936a3a1ba3d}} 
+void {\bfseries cof\+::basic\+\_\+logger\+::\+Deint} ()
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{_logging_function_8h_a1f56bcf4dd7901f39b3386261c75d4a5}{cof\+::\+Log} (const char $\ast$format, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{_logging_function_8h_ac0fff05470889b9bf801966564dddb36}{cof\+::\+Debug} (const char $\ast$format, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{_logging_function_8h_ac0c0af18a99bcd635fb89679890cdeaa}{cof\+::\+Warn} (const char $\ast$format, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{_logging_function_8h_a4d2fa4bc5cade7fdb692a0615b489997}{cof\+::\+Info} (const char $\ast$format, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \hyperlink{_logging_function_8h_a09fbfa2e340f6dff1804c2a19a7b34f4}{cof\+::\+Error} (const char $\ast$format, const Args \&... args)
+\begin{DoxyCompactList}\small\item\em Logging function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_logging_function_8h_a8758c4fec0e21dc986e4391e51922803}\label{_logging_function_8h_a8758c4fec0e21dc986e4391e51922803}} 
+static Logger $\ast$ {\bfseries cof\+::basic\+\_\+logger\+::s\+\_\+logger}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of logging free functions. 
+
+This is the collection of logging free functions such as\+: Log,Debug,Info,Warn and Error as well as the init and deint. \begin{DoxyAuthor}{Author}
+Simon Renger 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyPrecond}{Precondition}
+If used outside of Debug mode the macro {\ttfamily C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+ER} needs to be defined. Otherweise all functions/methods will leave a zero fingerprint. 
+\end{DoxyPrecond}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_logging_function_8h_a615f95e512a47e9a6f589a981120c6d2}\label{_logging_function_8h_a615f95e512a47e9a6f589a981120c6d2}} 
+\index{Logging\+Function.\+h@{Logging\+Function.\+h}!C\+O\+F\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+S\+\_\+\+V\+A\+L\+ID@{C\+O\+F\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+S\+\_\+\+V\+A\+L\+ID}}
+\index{C\+O\+F\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+S\+\_\+\+V\+A\+L\+ID@{C\+O\+F\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+S\+\_\+\+V\+A\+L\+ID}!Logging\+Function.\+h@{Logging\+Function.\+h}}
+\subsubsection{\texorpdfstring{C\+O\+F\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+S\+\_\+\+V\+A\+L\+ID}{COF\_CHECK\_IF\_LOGGER\_IS\_VALID}}
+{\footnotesize\ttfamily \#define C\+O\+F\+\_\+\+C\+H\+E\+C\+K\+\_\+\+I\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+S\+\_\+\+V\+A\+L\+ID(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (!basic\_logger::s\_logger)       \(\backslash\)
+        assert(\textcolor{keyword}{false});
+\end{DoxyCode}
+
+
+check if logger is initialized if not runtime assert! 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_logging_function_8h_file_ac0fff05470889b9bf801966564dddb36}\label{_logging_function_8h_file_ac0fff05470889b9bf801966564dddb36}} 
+\index{Logging\+Function.\+h@{Logging\+Function.\+h}!Debug@{Debug}}
+\index{Debug@{Debug}!Logging\+Function.\+h@{Logging\+Function.\+h}}
+\subsubsection{\texorpdfstring{Debug()}{Debug()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::\+Debug (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Will {\ttfamily assert} if basic\+\_\+logger\+::s\+\_\+logger is{\ttfamily $\ast$$\ast$\+N\+O\+T$\ast$$\ast$ valid! \textbackslash{}warning if not in debug mode and}C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+E\+R` is not set the function will compile empty. 
+\end{DoxyWarning}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_freefunction_8cpp-example}{example\+\_\+freefunction.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_function_8h_file_a09fbfa2e340f6dff1804c2a19a7b34f4}\label{_logging_function_8h_file_a09fbfa2e340f6dff1804c2a19a7b34f4}} 
+\index{Logging\+Function.\+h@{Logging\+Function.\+h}!Error@{Error}}
+\index{Error@{Error}!Logging\+Function.\+h@{Logging\+Function.\+h}}
+\subsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Will {\ttfamily assert} if basic\+\_\+logger\+::s\+\_\+logger is{\ttfamily $\ast$$\ast$\+N\+O\+T$\ast$$\ast$ valid! \textbackslash{}warning if not in debug mode and}C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+E\+R` is not set the function will compile empty. 
+\end{DoxyWarning}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_freefunction_8cpp-example}{example\+\_\+freefunction.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_function_8h_file_a4d2fa4bc5cade7fdb692a0615b489997}\label{_logging_function_8h_file_a4d2fa4bc5cade7fdb692a0615b489997}} 
+\index{Logging\+Function.\+h@{Logging\+Function.\+h}!Info@{Info}}
+\index{Info@{Info}!Logging\+Function.\+h@{Logging\+Function.\+h}}
+\subsubsection{\texorpdfstring{Info()}{Info()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::\+Info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Will {\ttfamily assert} if basic\+\_\+logger\+::s\+\_\+logger is{\ttfamily $\ast$$\ast$\+N\+O\+T$\ast$$\ast$ valid! \textbackslash{}warning if not in debug mode and}C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+E\+R` is not set the function will compile empty. 
+\end{DoxyWarning}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_freefunction_8cpp-example}{example\+\_\+freefunction.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_function_8h_file_a7da3a6483f1a37634cdd72a2d111bc66}\label{_logging_function_8h_file_a7da3a6483f1a37634cdd72a2d111bc66}} 
+\index{Logging\+Function.\+h@{Logging\+Function.\+h}!Init@{Init}}
+\index{Init@{Init}!Logging\+Function.\+h@{Logging\+Function.\+h}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily template$<$typename S , typename SS $>$ \\
+void cof\+::basic\+\_\+logger\+::\+Init (\begin{DoxyParamCaption}\item[{SS \&\&}]{settings }\end{DoxyParamCaption})}
+
+
+
+Initialization function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings} & Setting for the sink \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em S} & Sink type \\
+\hline
+{\em SS} & Sink Setting type \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyWarning}{Warning}
+static\+\_\+assert if Sink is not base on {\ttfamily Sink}\+: {\ttfamily Error\+: The used Sink is not compatible with the Logger! It needs to be of the type cof\+::\+Sink} 
+
+Only one function call is possible hence only one initialization otherwise it will cause a runtime assert. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{_logging_function_8h_file_a1f56bcf4dd7901f39b3386261c75d4a5}\label{_logging_function_8h_file_a1f56bcf4dd7901f39b3386261c75d4a5}} 
+\index{Logging\+Function.\+h@{Logging\+Function.\+h}!Log@{Log}}
+\index{Log@{Log}!Logging\+Function.\+h@{Logging\+Function.\+h}}
+\subsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::\+Log (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Will {\ttfamily assert} if basic\+\_\+logger\+::s\+\_\+logger is{\ttfamily $\ast$$\ast$\+N\+O\+T$\ast$$\ast$ valid! \textbackslash{}warning if not in debug mode and}C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+E\+R` is not set the function will compile empty. 
+\end{DoxyWarning}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_freefunction_8cpp-example}{example\+\_\+freefunction.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_function_8h_file_ac0c0af18a99bcd635fb89679890cdeaa}\label{_logging_function_8h_file_ac0c0af18a99bcd635fb89679890cdeaa}} 
+\index{Logging\+Function.\+h@{Logging\+Function.\+h}!Warn@{Warn}}
+\index{Warn@{Warn}!Logging\+Function.\+h@{Logging\+Function.\+h}}
+\subsubsection{\texorpdfstring{Warn()}{Warn()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void cof\+::\+Warn (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{const Args \&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Logging function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em args} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & Variadic template argument important for the format replacements. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classcof_1_1basic__logger_1_1_sink_a085f8c690add00cf55ef0754c5900397}{cof\+::basic\+\_\+logger\+::\+Sink\+::\+Sink\+In()} for more information on the implementation of the actual logging 
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Will {\ttfamily assert} if basic\+\_\+logger\+::s\+\_\+logger is{\ttfamily $\ast$$\ast$\+N\+O\+T$\ast$$\ast$ valid! \textbackslash{}warning if not in debug mode and}C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+E\+R` is not set the function will compile empty. 
+\end{DoxyWarning}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_freefunction_8cpp-example}{example\+\_\+freefunction.\+cpp}.\end{Desc}

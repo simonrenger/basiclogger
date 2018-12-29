@@ -1,0 +1,189 @@
+\hypertarget{_logging_macros_8h}{}\section{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logging\+Macros.h File Reference}
+\label{_logging_macros_8h}\index{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logging\+Macros.\+h@{A\+:/collectionofframeworks/\+Basic\+Logger/include/\+Logging\+Macros.\+h}}
+
+
+A collection of logging Macros which resolve into free functions.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_logging_macros_8h_a8d24c28599578e0df78cb65536741be1}{L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+IT}(Sink\+Type,  Settings)~cof\+::basic\+\_\+logger\+::\+Init$<$Sink\+Type$>$(std\+::move(Settings));
+\begin{DoxyCompactList}\small\item\em Initialization Macro for the logger. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_logging_macros_8h_a7e17c564e5b85d3c261e816443251f95}\label{_logging_macros_8h_a7e17c564e5b85d3c261e816443251f95}} 
+\#define {\bfseries L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+S\+T\+D\+O\+UT}()~cof\+::basic\+\_\+logger\+::\+Init$<$\hyperlink{classcof_1_1basic__logger_1_1_std_out}{cof\+::basic\+\_\+logger\+::\+Std\+Out}$>$(\hyperlink{structcof_1_1basic__logger_1_1_sink_settings}{cof\+::basic\+\_\+logger\+::\+Sink\+Settings}\{\});
+\item 
+\mbox{\Hypertarget{_logging_macros_8h_a66bea616247a4b14b71eb6eb01ca9d8b}\label{_logging_macros_8h_a66bea616247a4b14b71eb6eb01ca9d8b}} 
+\#define {\bfseries L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+I\+T\+\_\+\+F\+I\+LE}(settings)~cof\+::basic\+\_\+logger\+::\+Init$<$\hyperlink{classcof_1_1basic__logger_1_1_file}{cof\+::basic\+\_\+logger\+::\+File}$>$(std\+::move(settings));
+\item 
+\mbox{\Hypertarget{_logging_macros_8h_a949408ae41659956042cdbe1e59281f3}\label{_logging_macros_8h_a949408ae41659956042cdbe1e59281f3}} 
+\#define \hyperlink{_logging_macros_8h_a949408ae41659956042cdbe1e59281f3}{L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+I\+N\+IT}~cof\+::logger\+::\+Deint();
+\begin{DoxyCompactList}\small\item\em Deinitialization Macro for the logger frees the internal allocations. \end{DoxyCompactList}\item 
+\#define \hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format)~format
+\begin{DoxyCompactList}\small\item\em Formats the message in a way that it adds the Line and the File in front of it. \end{DoxyCompactList}\item 
+\#define \hyperlink{_logging_macros_8h_a018a1fe4b078f1a684610657a5848860}{L\+OG}(format, ...)~cof\+::\+Log(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);
+\begin{DoxyCompactList}\small\item\em Log macro calls the equivalent free functions. \end{DoxyCompactList}\item 
+\#define \hyperlink{_logging_macros_8h_a5dd0aa9e28b0c7db286181cfc81ebb94}{W\+A\+RN}(format, ...)~cof\+::\+Warn(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);
+\begin{DoxyCompactList}\small\item\em Log macro calls the equivalent free functions. \end{DoxyCompactList}\item 
+\#define \hyperlink{_logging_macros_8h_a78e40dfd87f516e322340d249027aea1}{E\+R\+R\+OR}(format, ...)~cof\+::\+Error(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);
+\begin{DoxyCompactList}\small\item\em Log macro calls the equivalent free functions. \end{DoxyCompactList}\item 
+\#define \hyperlink{_logging_macros_8h_a614c336056da6e8a7e6a06ed991b9feb}{D\+E\+B\+UG}(format, ...)~cof\+::\+Debug(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);
+\begin{DoxyCompactList}\small\item\em Log macro calls the equivalent free functions. \end{DoxyCompactList}\item 
+\#define \hyperlink{_logging_macros_8h_aafc148cee6d6c9e76b4ef417c7056f8f}{I\+N\+FO}(format, ...)~cof\+::\+Info(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);
+\begin{DoxyCompactList}\small\item\em Log macro calls the equivalent free functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of logging Macros which resolve into free functions. 
+
+Collection of the Init/\+Deinit Macros and L\+OG,D\+E\+B\+UG,W\+A\+RN,E\+R\+R\+OR and I\+N\+FO. If {\ttfamily C\+O\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+U\+S\+E\+\_\+\+D\+A\+T\+E\+\_\+\+L\+I\+NE} is not set the system will not log file and line of code. \begin{DoxyAuthor}{Author}
+Simon Renger 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
+\begin{DoxyPrecond}{Precondition}
+If {\ttfamily \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+} and {\ttfamily \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+} shall be logged then the macro {\ttfamily C\+O\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+U\+S\+E\+\_\+\+D\+A\+T\+E\+\_\+\+L\+I\+NE} needs to be set. 
+\end{DoxyPrecond}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_logging_macros_8h_a614c336056da6e8a7e6a06ed991b9feb}\label{_logging_macros_8h_a614c336056da6e8a7e6a06ed991b9feb}} 
+\index{Logging\+Macros.\+h@{Logging\+Macros.\+h}!D\+E\+B\+UG@{D\+E\+B\+UG}}
+\index{D\+E\+B\+UG@{D\+E\+B\+UG}!Logging\+Macros.\+h@{Logging\+Macros.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+B\+UG}{DEBUG}}
+{\footnotesize\ttfamily \#define D\+E\+B\+UG(\begin{DoxyParamCaption}\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})~cof\+::\+Debug(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);}
+
+
+
+Log macro calls the equivalent free functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em ...} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_macro_8cpp-example}{example\+\_\+macro.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_macros_8h_a78e40dfd87f516e322340d249027aea1}\label{_logging_macros_8h_a78e40dfd87f516e322340d249027aea1}} 
+\index{Logging\+Macros.\+h@{Logging\+Macros.\+h}!E\+R\+R\+OR@{E\+R\+R\+OR}}
+\index{E\+R\+R\+OR@{E\+R\+R\+OR}!Logging\+Macros.\+h@{Logging\+Macros.\+h}}
+\subsubsection{\texorpdfstring{E\+R\+R\+OR}{ERROR}}
+{\footnotesize\ttfamily \#define E\+R\+R\+OR(\begin{DoxyParamCaption}\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})~cof\+::\+Error(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);}
+
+
+
+Log macro calls the equivalent free functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em ...} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_macro_8cpp-example}{example\+\_\+macro.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}\label{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}} 
+\index{Logging\+Macros.\+h@{Logging\+Macros.\+h}!F\+O\+R\+M\+AT@{F\+O\+R\+M\+AT}}
+\index{F\+O\+R\+M\+AT@{F\+O\+R\+M\+AT}!Logging\+Macros.\+h@{Logging\+Macros.\+h}}
+\subsubsection{\texorpdfstring{F\+O\+R\+M\+AT}{FORMAT}}
+{\footnotesize\ttfamily \#define F\+O\+R\+M\+AT(\begin{DoxyParamCaption}\item[{}]{format }\end{DoxyParamCaption})~format}
+
+
+
+Formats the message in a way that it adds the Line and the File in front of it. 
+
+\begin{DoxyWarning}{Warning}
+Works only if {\ttfamily C\+O\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+U\+S\+E\+\_\+\+D\+A\+T\+E\+\_\+\+L\+I\+NE} is set 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+could have a different approach. 
+\end{DoxyNote}
+\mbox{\Hypertarget{_logging_macros_8h_aafc148cee6d6c9e76b4ef417c7056f8f}\label{_logging_macros_8h_aafc148cee6d6c9e76b4ef417c7056f8f}} 
+\index{Logging\+Macros.\+h@{Logging\+Macros.\+h}!I\+N\+FO@{I\+N\+FO}}
+\index{I\+N\+FO@{I\+N\+FO}!Logging\+Macros.\+h@{Logging\+Macros.\+h}}
+\subsubsection{\texorpdfstring{I\+N\+FO}{INFO}}
+{\footnotesize\ttfamily \#define I\+N\+FO(\begin{DoxyParamCaption}\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})~cof\+::\+Info(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);}
+
+
+
+Log macro calls the equivalent free functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em ...} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_macro_8cpp-example}{example\+\_\+macro.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_macros_8h_a018a1fe4b078f1a684610657a5848860}\label{_logging_macros_8h_a018a1fe4b078f1a684610657a5848860}} 
+\index{Logging\+Macros.\+h@{Logging\+Macros.\+h}!L\+OG@{L\+OG}}
+\index{L\+OG@{L\+OG}!Logging\+Macros.\+h@{Logging\+Macros.\+h}}
+\subsubsection{\texorpdfstring{L\+OG}{LOG}}
+{\footnotesize\ttfamily \#define L\+OG(\begin{DoxyParamCaption}\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})~cof\+::\+Log(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);}
+
+
+
+Log macro calls the equivalent free functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em ...} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_macro_8cpp-example}{example\+\_\+macro.\+cpp}.\end{Desc}
+\mbox{\Hypertarget{_logging_macros_8h_a8d24c28599578e0df78cb65536741be1}\label{_logging_macros_8h_a8d24c28599578e0df78cb65536741be1}} 
+\index{Logging\+Macros.\+h@{Logging\+Macros.\+h}!L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+IT@{L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+IT}}
+\index{L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+IT@{L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+IT}!Logging\+Macros.\+h@{Logging\+Macros.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+IT}{LOGGER\_INIT}}
+{\footnotesize\ttfamily \#define L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+IT(\begin{DoxyParamCaption}\item[{}]{Sink\+Type,  }\item[{}]{Settings }\end{DoxyParamCaption})~cof\+::basic\+\_\+logger\+::\+Init$<$Sink\+Type$>$(std\+::move(Settings));}
+
+
+
+Initialization Macro for the logger. 
+
+calls the logger free function. The macro\+: {\ttfamily L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+I\+N\+IT} should be called at the end of the program! 
+\begin{DoxyParams}{Parameters}
+{\em Sink\+Type} & defines the sink type e.\+g. Std\+Out or File \\
+\hline
+{\em Settings} & Will be passed through to the sink. Depends on the Sink if required a extra type. Check Sink types. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The macro\+: {\ttfamily L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+I\+N\+IT} should be called at the end of the program! To clean up memory. 
+\end{DoxyWarning}
+\mbox{\Hypertarget{_logging_macros_8h_a5dd0aa9e28b0c7db286181cfc81ebb94}\label{_logging_macros_8h_a5dd0aa9e28b0c7db286181cfc81ebb94}} 
+\index{Logging\+Macros.\+h@{Logging\+Macros.\+h}!W\+A\+RN@{W\+A\+RN}}
+\index{W\+A\+RN@{W\+A\+RN}!Logging\+Macros.\+h@{Logging\+Macros.\+h}}
+\subsubsection{\texorpdfstring{W\+A\+RN}{WARN}}
+{\footnotesize\ttfamily \#define W\+A\+RN(\begin{DoxyParamCaption}\item[{}]{format,  }\item[{}]{... }\end{DoxyParamCaption})~cof\+::\+Warn(\hyperlink{_logging_macros_8h_a463e0f99f2caa6edefbaeec7aadf3e08}{F\+O\+R\+M\+AT}(format), \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+);}
+
+
+
+Log macro calls the equivalent free functions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & ftm style format. e.\+g. {\ttfamily User \#\+ID\{\} logged in at \{\}. with the IP\{\}} \\
+\hline
+{\em ...} & Variadic arguments for the replacements. e.\+g. time etc. \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{example_macro_8cpp-example}{example\+\_\+macro.\+cpp}.\end{Desc}

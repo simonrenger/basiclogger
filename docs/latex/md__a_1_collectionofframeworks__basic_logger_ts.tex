@@ -1,0 +1,70 @@
+This document shall describe the technical specification of the Basic Logger module.
+
+\subsection*{Design Goal}
+
+The design goal of this module is it to deliver a simple none multithreaded logger interface which is easy to use and supports formatting.
+
+\subsection*{The Interface}
+
+The logger A\+PI shall cover 3 different approaches\+:
+
+
+\begin{DoxyItemize}
+\item free functions
+\item a {\ttfamily Logger} class
+\item Logger Macros
+\end{DoxyItemize}
+
+Each of those approaches shall have the same set of functions.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Log(format,\mbox{[}information\mbox{]})}
+\item {\ttfamily Info(format,\mbox{[}information\mbox{]})}
+\item {\ttfamily Debug(format,\mbox{[}information\mbox{]})}
+\item {\ttfamily Warn(format,\mbox{[}information\mbox{]})}
+\item {\ttfamily Error(format,\mbox{[}information\mbox{]})}
+\end{DoxyItemize}
+
+{\bfseries Activation specification}
+
+The Module only works if one of the following pre-\/processor defines is defined\+:
+
+{\ttfamily D\+E\+B\+UG , D\+E\+B\+U\+G\+\_\+ , \+\_\+\+D\+E\+B\+U\+G\+\_\+ , D\+E\+B\+U\+G\+\_\+ , \+\_\+\+D\+E\+B\+UG, C\+O\+F\+\_\+\+U\+S\+E\+\_\+\+L\+O\+G\+G\+ER}
+
+if they are not defined the Logging class will be empty. {\ttfamily size 1} and the free function will be empty as well. No zero overhead.
+
+{\bfseries Macro specification}
+
+They shall be capitalized and always print the {\ttfamily \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+} and {\ttfamily \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+} with its output unless {\ttfamily C\+O\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+U\+S\+E\+\_\+\+D\+A\+T\+E\+\_\+\+L\+I\+NE} is not defined. If {\ttfamily C\+O\+F\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+U\+S\+E\+\_\+\+D\+A\+T\+E\+\_\+\+L\+I\+NE} is undefined there shall be no output of the current line and file.
+
+{\bfseries Output specification}
+
+The output on the screen shall be as following\+:
+
+
+\begin{DoxyCode}
+[Level] [Date Time] [[File] [Line]] [Message]
+\end{DoxyCode}
+
+
+example\+:
+
+
+\begin{DoxyCode}
+[Info] [21-02-2018 22:03] </home/user/cpp/test.cpp:24> User data was empty used default.
+\end{DoxyCode}
+
+
+{\bfseries Sink Specification}
+
+A {\ttfamily Sink} is a class which provides the low level function such as {\ttfamily print} on screen or save the output in a file. In this basic approach the {\ttfamily Sink} {\itshape cannot} be changes during runtime after its set.
+
+The basic sinks the system shall support are\+:
+
+
+\begin{DoxyItemize}
+\item Standard in / out (Terminal)
+\item File
+\item Both 
+\end{DoxyItemize}
