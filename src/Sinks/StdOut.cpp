@@ -4,11 +4,11 @@
 #include "fmt/format.h"
 #endif
 
-void cof::basic_logger::StdOut::Process(Level lvl, fmt::memory_buffer&& buffer)
+void cof::basic_logger::StdOut::Process(Level lvl, const char* data, std::size_t size)
 {
     if constexpr (g_enabled) {
         auto* stdOut = (lvl == Level::ERROR) ? stderr : stdout;
-        fwrite(buffer.data(), sizeof(char), buffer.size(), stdOut);
+        fwrite(data, sizeof(char), size, stdOut);
         fflush(stdOut);
     }
 }

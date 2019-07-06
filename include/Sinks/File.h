@@ -72,7 +72,7 @@ namespace cof
             File(SinkSettings* settings);
             ~File();
         protected:
-            virtual void Process(Level lvl, fmt::memory_buffer&& buffer) override final;
+            virtual void Process(Level lvl, const char* data, std::size_t size) override final;
         private:
             
             FileSinkSettings settings_;

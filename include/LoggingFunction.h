@@ -43,7 +43,7 @@
 #include <cassert>
 #include <type_traits>
 #include "BasicLogger.h"
-
+#include "Details/GlobalLoggerInstance.h"
 namespace cof
 {
 namespace basic_logger
@@ -52,9 +52,6 @@ namespace basic_logger
 class StdOut;
 class File;
 struct FileSinkSettings;
-
-// Global static loggers
-static Logger* s_logger;
 
 /**
  * \brief Initialization function
@@ -79,19 +76,12 @@ void Init(SS&& settings)
     }
 };
 
-void inline InitStdOut()
-{
-    cof::basic_logger::Init<cof::basic_logger::StdOut>(std::move(cof::basic_logger::SinkSettings{}));
-}
-void inline InitFile(cof::basic_logger::FileSinkSettings&& settings)
-{
-    cof::basic_logger::Init<cof::basic_logger::File>(std::move(settings));
-}
 
-void inline Deint() {
-    delete s_logger;
-    s_logger = nullptr;
-}
+    void InitStdOut();
+
+    void InitFile(cof::basic_logger::FileSinkSettings&& settings);
+
+    void Deint();
 }
 /**
  * \def COF_CHECK_IF_LOGGER_IS_VALID()
@@ -114,7 +104,7 @@ void inline Deint() {
 template <typename... Args>
 void Log(const char* format, const Args&... args)
 {
-    if constexpr (cof::logger::g_enabled)
+    if constexpr (cof::basic_logger::g_enabled)
     {
         COF_CHECK_IF_LOGGER_IS_VALID()
         basic_logger::s_logger->Log(format, args...);
@@ -132,7 +122,7 @@ void Log(const char* format, const Args&... args)
 template <typename... Args>
 void Debug(const char* format, const Args&... args)
 {
-    if constexpr (cof::logger::g_enabled)
+    if constexpr (cof::basic_logger::g_enabled)
     {
         COF_CHECK_IF_LOGGER_IS_VALID()
         basic_logger::s_logger->Debug(format, args...);
@@ -150,7 +140,7 @@ void Debug(const char* format, const Args&... args)
 template <typename... Args>
 void Warn(const char* format, const Args&... args)
 {
-    if constexpr (cof::logger::g_enabled)
+    if constexpr (cof::basic_logger::g_enabled)
     {
         COF_CHECK_IF_LOGGER_IS_VALID()
         basic_logger::s_logger->Warn(format, args...);
@@ -168,7 +158,7 @@ void Warn(const char* format, const Args&... args)
 template <typename... Args>
 void Info(const char* format, const Args&... args)
 {
-    if constexpr (cof::logger::g_enabled)
+    if constexpr (cof::basic_logger::g_enabled)
     {
         COF_CHECK_IF_LOGGER_IS_VALID()
         basic_logger::s_logger->Info(format, args...);
@@ -186,7 +176,7 @@ void Info(const char* format, const Args&... args)
 template <typename... Args>
 void Error(const char* format, const Args&... args)
 {
-    if constexpr (cof::logger::g_enabled)
+    if constexpr (cof::basic_logger::g_enabled)
     {
         COF_CHECK_IF_LOGGER_IS_VALID()
         basic_logger::s_logger->Error(format, args...);

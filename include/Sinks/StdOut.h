@@ -53,7 +53,7 @@ namespace cof
             StdOut(SinkSettings* settings) { delete settings; }
         protected:
             /// Uses `fwrite` and `fflush`
-            void Process(Level lvl, fmt::memory_buffer&& message) override;
+            void Process(Level lvl, const char* data, std::size_t size) override;
         };
     }
 }

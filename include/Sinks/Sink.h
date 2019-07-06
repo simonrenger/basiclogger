@@ -42,11 +42,6 @@
  **/
 #include <array>
 #include <string>
-#if defined(__DEBUG) || defined(__DEBUG__) || defined(_DEBUG_) || defined(DEBUG_) || defined(_DEBUG) || defined(COF_USE_LOGGER)
-
-#include "fmt/format.h"
-
-#endif
 
 namespace cof
 {
@@ -113,9 +108,10 @@ class Sink
     void SinkIn(Level lvl, std::string&& message);
 
    protected:
-    virtual void Process(Level lvl, fmt::memory_buffer&& message) = 0;
+    virtual void Process(Level lvl, const char* data, std::size_t size) = 0;
     std::string GetFormattedDate();
     std::array<const char*, 5> levels_{"LOG", "INFO", "DEBUG", "ERROR", "WARN"};
+	std::array<unsigned int,5> colors { 255,86,34,196,202 };
 };
 }
 }

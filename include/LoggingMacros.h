@@ -50,7 +50,7 @@ line of code.
  * \def LOGGER_DEINIT
  * \brief Deinitialization Macro for the logger frees the internal allocations.
  */
-#define LOGGER_DEINIT cof::logger::Deint();
+#define LOGGER_DEINIT cof::basic_logger::Deint();
 
 /**
  * \def #COF_LOGGER_USE_DATE_LINE

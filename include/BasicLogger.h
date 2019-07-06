@@ -33,16 +33,20 @@
  *
  **/
 #include "Sinks/Sink.h"
-#include "fmt/format.h"
 
+#if defined(__DEBUG) || defined(__DEBUG__) || defined(_DEBUG_) || defined(DEBUG_) || defined(_DEBUG) || defined(COF_USE_LOGGER)
+	#include <fmt/format.h>
+#endif
 #include <string>
 #include <memory>
 
 namespace cof
 {
-/*
+/**
+ *
  *  \brief Implementation namespace
  *  \details Is the home of the basic implementation of the logger class as well as all its utilities.
+ *  
  */
 namespace basic_logger
 {
@@ -138,7 +142,6 @@ class Logger
     {
         sink_->SinkIn(Level::ERROR, std::move(fmt::vformat(formStr, fmt::make_format_args(args...))));
     }
-
    private:
     std::unique_ptr<basic_logger::Sink> sink_;
 };

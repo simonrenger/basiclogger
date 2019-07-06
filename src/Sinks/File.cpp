@@ -22,11 +22,11 @@ cof::basic_logger::File::~File()
     fclose(file_);
 }
 
-void cof::basic_logger::File::Process(Level lvl, fmt::memory_buffer&& buffer)
+void cof::basic_logger::File::Process(Level lvl, const char* data,std::size_t size)
 {
     if constexpr (g_enabled)
     {
-        fwrite(buffer.data(), sizeof(char), buffer.size(), file_);
+        fwrite(data, sizeof(char), size, file_);
         fflush(file_);
     }
 }
